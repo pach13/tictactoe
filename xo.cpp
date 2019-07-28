@@ -1,10 +1,10 @@
-#include <iostream> // This file works good
-//#include <random>  // This file works good
-#include <iomanip> // This file works good
-#include <algorithm> // This file works good
-#define O 'O'; // This file works good
-#define X 'O'; // This file works good
-using namespace std; // This file works good
+#include <iostream>
+//#include <random> 
+#include <iomanip>
+#include <algorithm>
+#define O 'O';
+#define X 'O';
+using namespace std;
 // -------
 // |1|2|3|
 // -------
@@ -86,150 +86,29 @@ void moves(char game[3][3],char move, int inputPlayerMove,bool *CheckForMultiple
 	
 	// create a function if the input is valid
 	// create a function that excute the move if valid
-	if (inputPlayerMove == 1 ) {
-		if(game[0][0] == 'X') {
-			cout << "You already used this place! Pleaes choose a diffrent position." << endl;
-			*CheckForMultipleX = true;
-		}
-		else if(game[0][0] == 'O') {
-			cout << "You already used this place! Pleaes choose a diffrent position." << endl;
-			*CheckForMultipleO = true;
-		}
-		else {
-			*CheckForMultipleO = false;
-			*CheckForMultipleX = false;
-			game[0][0] = move;
-			*NumberOfMoves= *NumberOfMoves+1;
-		}
-	}
-	if (inputPlayerMove == 2) {
-		if (game[0][1] == 'X') {
-			cout << "You already used this place! Pleaes choose a diffrent position." << endl;
-			*CheckForMultipleX = true;
-		}
-		else if (game[0][1] == 'O') {
-			cout << "You already used this place! Pleaes choose a diffrent position." << endl;
-			*CheckForMultipleO = true;
-		}
-		else {
-			game[0][1] = move;
-			*CheckForMultipleO = false;
-			*CheckForMultipleX = false;
-			*NumberOfMoves = *NumberOfMoves + 1;
+	for (int i = 0; i <= 9; i++) {
+		if (inputPlayerMove == i) {
+			for (int x = 0; x < 3; x++) {
+				for (int j = 0; j < 3; j++) {
+					if (game[x][j] == 'X') {
+						cout << "You already used this place! Pleaes choose a diffrent position." << endl;
+						*CheckForMultipleX = true;
+					}
+					else if (game[x][j] == 'O') {
+						cout << "You already used this place! Pleaes choose a diffrent position." << endl;
+						*CheckForMultipleO = true;
+					}
+					else {
+						*CheckForMultipleO = false;
+						*CheckForMultipleX = false;
+						game[x][j] = move;
+						*NumberOfMoves = *NumberOfMoves + 1;
+					}
+				}
+			}
 		}
 	}
-	if (inputPlayerMove == 3) {
-		if (game[0][2] == 'X') {
-			cout << "You already used this place! Pleaes choose a diffrent position." << endl;
-			*CheckForMultipleX = true;
-		}
-		else if (game[0][2] == 'O') {
-			cout << "You already used this place! Pleaes choose a diffrent position." << endl;
-			*CheckForMultipleO = true;
-		}
-		else {
-			game[0][2] = move;
-			*CheckForMultipleO = false;
-			*CheckForMultipleX = false;
-			*NumberOfMoves = *NumberOfMoves + 1;
-		}
-	}
-	if (inputPlayerMove == 4) {
-		if (game[1][0] == 'X') {
-			cout << "You already used this place! Pleaes choose a diffrent position." << endl;
-			*CheckForMultipleX = true;
-		}
-		else if (game[1][0] == 'O') {
-			cout << "You already used this place! Pleaes choose a diffrent position." << endl;
-			*CheckForMultipleO = true;
-		}
-		else {
-			game[1][0] = move;
-			*CheckForMultipleO = false;
-			*CheckForMultipleX = false;
-			*NumberOfMoves = *NumberOfMoves + 1;
-		}
-	}
-	if (inputPlayerMove == 5) {
-		if (game[1][1] == 'X') {
-			cout << "You already used this place! Pleaes choose a diffrent position." << endl;
-			*CheckForMultipleX = true;
-		}
-		else if (game[1][1] == 'O') {
-			cout << "You already used this place! Pleaes choose a diffrent position." << endl;
-			*CheckForMultipleO = true;
-		}
-		else {
-			game[1][1] = move;
-			*CheckForMultipleO = false;
-			*CheckForMultipleX = false;
-			*NumberOfMoves = *NumberOfMoves + 1;
-		}
-	}
-	if (inputPlayerMove == 6) {
-		if (game[1][2] == 'X') {
-			cout << "You already used this place! Pleaes choose a diffrent position." << endl;
-			*CheckForMultipleX = true;
-		}
-		else if (game[1][2] == 'O') {
-			cout << "You already used this place! Pleaes choose a diffrent position." << endl;
-			*CheckForMultipleO = true;
-		}
-		else {
-			game[1][2] = move;
-			*CheckForMultipleO = false;
-			*CheckForMultipleX = false;
-			*NumberOfMoves = *NumberOfMoves + 1;
-		}
-	}
-	if (inputPlayerMove == 7) {
-		if (game[2][0] == 'X') {
-			cout << "You already used this place! Pleaes choose a diffrent position." << endl;
-			*CheckForMultipleX = true;
-		}
-		else if (game[2][0] == 'O') {
-			cout << "You already used this place! Pleaes choose a diffrent position." << endl;
-			*CheckForMultipleO = true;
-		}
-		else {
-			game[2][0] = move;
-			*CheckForMultipleO = false;
-			*CheckForMultipleX = false;
-			*NumberOfMoves = *NumberOfMoves + 1;
-		}
-	}
-	if (inputPlayerMove == 8) {
-		if (game[2][1] == 'X') {
-			cout << "You already used this place! Pleaes choose a diffrent position." << endl;
-			*CheckForMultipleX = true;
-		}
-		else if (game[2][1] == 'O') {
-			cout << "You already used this place! Pleaes choose a diffrent position." << endl;
-			*CheckForMultipleO = true;
-		}
-		else {
-			game[2][1] = move;
-			*CheckForMultipleO = false;
-			*CheckForMultipleX = false;
-			*NumberOfMoves = *NumberOfMoves + 1;
-		}
-	}
-	if (inputPlayerMove == 9) {
-		if (game[2][2] == 'X') {
-			cout << "You already used this place! Pleaes choose a diffrent position." << endl;
-			*CheckForMultipleX = true;
-		}
-		else if (game[2][2] == 'O') {
-			cout << "You already used this place! Pleaes choose a diffrent position." << endl;
-			*CheckForMultipleO = true;
-		}
-		else {
-			game[2][2] = move;
-			*CheckForMultipleO = false;
-			*CheckForMultipleX = false;
-			*NumberOfMoves = *NumberOfMoves + 1;
-		}
-	}
+	
 }
 
 // rename
