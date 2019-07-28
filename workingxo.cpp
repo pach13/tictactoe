@@ -230,7 +230,6 @@ void moves(char game[3][3],char move, int inputPlayerMove,bool *CheckForMultiple
 			*NumberOfMoves = *NumberOfMoves + 1;
 		}
 	}
-	}
 	
 }
 
