@@ -1,10 +1,10 @@
-#include <iostream>
-//#include <random> 
-#include <iomanip>
-#include <algorithm>
-#define O 'O';
-#define X 'O';
-using namespace std;
+#include <iostream> // This file works good
+//#include <random>  // This file works good
+#include <iomanip> // This file works good
+#include <algorithm> // This file works good
+#define O 'O'; // This file works good
+#define X 'O'; // This file works good
+using namespace std; // This file works good
 // -------
 // |1|2|3|
 // -------
